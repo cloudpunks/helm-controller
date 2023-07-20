@@ -1,0 +1,15 @@
+---
+extends: default
+
+ignore: |
+  dist/*
+
+rules:
+  line-length: disable
+
+  document-end:
+    level: error
+  document-start:
+    level: error
+
+...

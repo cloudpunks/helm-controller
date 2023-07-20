@@ -1,0 +1,23 @@
+---
+name: kustomize
+
+"on":
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  kustomize:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v3
+
+      - name: Build manifest
+        uses: actionhippie/kustomize@v2
+        with:
+          print: true
+
+...

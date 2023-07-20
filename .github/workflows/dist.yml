@@ -1,0 +1,36 @@
+---
+name: dist
+
+"on":
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+
+jobs:
+  dist:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.BOT_ACCESS_TOKEN }}
+
+      - name: Build manifest
+        uses: actionhippie/kustomize@v2
+        with:
+          target: dist/manifest.yml
+
+      - name: Commit changes
+        if: github.event_name != 'pull_request'
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: GitHub Actions
+          author_email: ops@cloudpunks.de
+          add: dist/manifest.yml
+          message: "chore: automated dist update [skip ci]"
+          push: true
+          commit: --signoff
+
+...

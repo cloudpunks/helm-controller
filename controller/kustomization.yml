@@ -1,0 +1,17 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: kube-system
+
+resources:
+  - crd.yml
+  - serviceaccount.yml
+  - clusterrolebinding.yml
+  - deployment.yml
+
+images:
+  - name: helm-controller
+    newName: rancher/helm-controller
+    newTag: "v0.15.2"
+
+...

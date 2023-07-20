@@ -1,0 +1,68 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: helm-controller
+  labels:
+    app.kubernetes.io/name: helm-controller
+    app.kubernetes.io/component: controller
+
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+
+  strategy:
+    type: Recreate
+
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: helm-controller
+      app.kubernetes.io/component: controller
+
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: helm-controller
+        app.kubernetes.io/component: controller
+
+    spec:
+      enableServiceLinks: false
+      serviceAccountName: helm-controller
+
+      tolerations:
+        - key: "node.cloudprovider.kubernetes.io/uninitialized"
+          effect: "NoSchedule"
+          value: "true"
+        - key: "CriticalAddonsOnly"
+          operator: "Exists"
+        - key: "node.kubernetes.io/network-unavailable"
+          effect: "NoSchedule"
+          operator: "Exists"
+        - key: "node-role.kubernetes.io/master"
+          effect: NoSchedule
+          operator: Exists
+        - key: "node-role.kubernetes.io/control-plane"
+          effect: NoSchedule
+          operator: Exists
+        - key: "node.kubernetes.io/not-ready"
+          effect: "NoSchedule"
+          value: "true"
+
+      containers:
+        - name: server
+          image: helm-controller
+          imagePullPolicy: IfNotPresent
+
+          command:
+            - helm-controller
+
+          resources:
+            limits:
+              cpu: 500m
+              memory: 512Mi
+            requests:
+              cpu: 100m
+              memory: 64Mi
+
+...
