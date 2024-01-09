@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/cloudpunks/helm-controller/compare/v1.0.2...v1.0.3) (2024-01-09)
+
+
+### Bugfixes
+
+* **deps:** update rancher/helm-controller docker tag to v0.15.5 ([d4ece85](https://github.com/cloudpunks/helm-controller/commit/d4ece85b22c50731d062f549a1b4e6fd52bdba69))
+
 ## [1.0.2](https://github.com/cloudpunks/helm-controller/compare/v1.0.1...v1.0.2) (2023-08-21)
 
 
