@@ -18,7 +18,7 @@ jobs:
           token: ${{ secrets.BOT_ACCESS_TOKEN }}
 
       - name: Build manifest
-        uses: actionhippie/kustomize@v2
+        uses: actionhippie/kustomize@v3
         with:
           target: dist/manifest.yml
 

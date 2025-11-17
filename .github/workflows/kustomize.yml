@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v5
 
       - name: Build manifest
-        uses: actionhippie/kustomize@v2
+        uses: actionhippie/kustomize@v3
         with:
           print: true
 
