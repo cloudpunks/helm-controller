@@ -57,26 +57,11 @@
                             "section": "Features"
                         },
                         {
-                            "type": "deps",
-                            "scope": "major",
-                            "section": "Features"
-                        },
-                        {
                             "type": "minor",
                             "section": "Features"
                         },
                         {
-                            "type": "deps",
-                            "scope": "minor",
-                            "section": "Features"
-                        },
-                        {
                             "type": "patch",
-                            "section": "Bugfixes"
-                        },
-                        {
-                            "type": "deps",
-                            "scope": "patch",
                             "section": "Bugfixes"
                         },
                         {
@@ -88,8 +73,13 @@
                             "section": "Bugfixes"
                         },
                         {
+                            "type": "deps",
+                            "section": "Dependencies"
+                        },
+                        {
                             "type": "chore",
-                            "hidden": true
+                            "section": "Miscellaneous",
+                            "hidden": false
                         },
                         {
                             "type": "docs",
@@ -110,16 +100,43 @@
             }
         ],
         [
+            "semantic-release-replace-plugin",
+            {
+                "replacements": [
+                    {
+                        "files": [
+                            "README.md"
+                        ],
+                        "from": "github.com/cloudpunks/helm-controller\\?ref=.*",
+                        "to": "github.com/cloudpunks/helm-controller?ref=v${nextRelease.version}",
+                        "results": [
+                            {
+                                "file": "README.md",
+                                "hasChanged": true,
+                                "numMatches": 1,
+                                "numReplacements": 1
+                            }
+                        ],
+                        "countMatches": true
+                    }
+                ]
+            }
+        ],
+        [
             "@semantic-release/git",
             {
                 "message": "chore: release ${nextRelease.version} [skip ci]",
-                "assets": ["CHANGELOG.md"]
+                "assets": [
+                    "CHANGELOG.md",
+                    ".github/RELEASE",
+                    "README.md"
+                ]
             }
         ],
         [
             "@semantic-release/github",
             {
-                "publish": true
+                "assets": []
             }
         ]
     ]

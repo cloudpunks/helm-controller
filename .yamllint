@@ -1,7 +1,10 @@
 ---
+# yaml-language-server: $schema=https://www.schemastore.org/yamllint.json
 extends: default
 
 ignore: |
+  .github/workflows
+  .pre-commit-config.yaml
   dist/*
 
 rules:
@@ -11,5 +14,8 @@ rules:
     level: error
   document-start:
     level: error
+
+  indentation:
+    spaces: 2
 
 ...

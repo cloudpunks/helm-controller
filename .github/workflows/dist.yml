@@ -1,4 +1,5 @@
 ---
+# yaml-language-server: $schema=https://www.schemastore.org/github-workflow.json
 name: dist
 
 "on":
@@ -12,15 +13,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout source
-        uses: actions/checkout@v6
+      - name: Generate token
+        id: token
+        uses: tibdex/github-app-token@3beb63f4bd073e61482598c45c71c1019b59b73a # v2
         with:
-          token: ${{ secrets.BOT_ACCESS_TOKEN }}
+          app_id: ${{ secrets.TOKEN_EXCHANGE_APP }}
+          installation_retrieval_mode: id
+          installation_retrieval_payload: ${{ secrets.TOKEN_EXCHANGE_INSTALL }}
+          private_key: ${{ secrets.TOKEN_EXCHANGE_KEY }}
+          permissions: >-
+            {"contents": "write", "pull_requests": "write", "issues": "write", "packages": "write"}
+
+      - name: Checkout source
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
+        with:
+          token: ${{ steps.token.outputs.token }}
 
       - name: Build manifest
         uses: actionhippie/kustomize@v3
         with:
           target: dist/manifest.yml
+
+      - name: Source rebase
+        run: git pull --autostash --rebase
 
       - name: Commit changes
         if: github.event_name != 'pull_request'
