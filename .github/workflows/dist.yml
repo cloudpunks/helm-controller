@@ -33,7 +33,7 @@ jobs:
           token: ${{ steps.token.outputs.token }}
 
       - name: Build manifest
-        uses: actionhippie/kustomize@v3
+        uses: actionhippie/kustomize@13bdb1f276d257f30bbf227ced665a66eac9fabb # v3
         with:
           target: dist/manifest.yml
 
@@ -42,7 +42,7 @@ jobs:
 
       - name: Commit changes
         if: github.event_name != 'pull_request'
-        uses: EndBug/add-and-commit@v9
+        uses: EndBug/add-and-commit@a94899bca583c204427a224a7af87c02f9b325d5 # v9
         with:
           author_name: GitHub Actions
           author_email: ops@cloudpunks.de
