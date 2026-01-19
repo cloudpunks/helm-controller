@@ -33,7 +33,7 @@ jobs:
           token: ${{ steps.token.outputs.token }}
 
       - name: Build manifest
-        uses: actionhippie/kustomize@13bdb1f276d257f30bbf227ced665a66eac9fabb # v3
+        uses: actionhippie/kustomize@cd8f878e461efb2381f3c6be6de5826b324a40fd # v3
         with:
           target: dist/manifest.yml
 
