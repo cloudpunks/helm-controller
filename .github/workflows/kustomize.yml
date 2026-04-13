@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
 
       - name: Build manifest
-        uses: actionhippie/kustomize@a1333022e25e1b46fb937d273fe7543a79ad44ca # v3
+        uses: actionhippie/kustomize@780654b33b4190ec76c91d1be2ca5c524059ca47 # v3
         with:
           print: true
 
