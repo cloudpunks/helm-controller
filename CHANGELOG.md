@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.2.1](https://github.com/cloudpunks/helm-controller/compare/v1.2.0...v1.2.1) (2026-04-13)
+
+### Dependencies
+
+* **patch:** update rancher/helm-controller docker tag to v0.17.1 ([#46](https://github.com/cloudpunks/helm-controller/issues/46)) ([63f74d1](https://github.com/cloudpunks/helm-controller/commit/63f74d1f133ac0dd9cba65faece8a394527bca97))
+
+### Miscellaneous
+
+* automated dist update [skip ci] ([d3320b2](https://github.com/cloudpunks/helm-controller/commit/d3320b27102935ee3ba206fd69601c40e6138302))
+
 ## [1.2.0](https://github.com/cloudpunks/helm-controller/compare/v1.1.12...v1.2.0) (2026-03-30)
 
 ### Dependencies
