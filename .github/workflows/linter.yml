@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
 
       - name: Lint manifest
-        uses: actionhippie/yamllint@6101ad960e0f3f2c59f49dd4b81d06ee7dcb6cae # v1
+        uses: actionhippie/yamllint@42cde5141b45bc5832d61ed19007b5ca0f354753 # v1
         with:
           strict: true
 
