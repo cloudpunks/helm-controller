@@ -196,7 +196,7 @@ spec:
       containers:
       - command:
         - helm-controller
-        image: rancher/helm-controller:v0.17.2@sha256:4f2c21b4b816cc522190f16173801b0ba332a4cecbeeccb9535e755f4dfc6ae4
+        image: rancher/helm-controller:v0.17.3@sha256:ba09b0fac61a20ed7a4f51a6883f930ebdcb2aea70e8d2c48523ddec733bfba1
         imagePullPolicy: IfNotPresent
         name: server
         resources:
