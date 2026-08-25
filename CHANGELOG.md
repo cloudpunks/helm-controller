@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.3.0](https://github.com/cloudpunks/helm-controller/compare/v1.2.7...v1.3.0) (2026-08-25)
+
+### Features
+
+* apply new standard repo structure and integrate mise ([98a2e61](https://github.com/cloudpunks/helm-controller/commit/98a2e61d590b26032b40cae45f1be3c6465f1ba1))
+
 ## [1.2.7](https://github.com/cloudpunks/helm-controller/compare/v1.2.6...v1.2.7) (2026-08-17)
 
 ## [1.2.6](https://github.com/cloudpunks/helm-controller/compare/v1.2.5...v1.2.6) (2026-08-03)

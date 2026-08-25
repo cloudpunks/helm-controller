@@ -13,7 +13,7 @@ kind: Kustomization
 namespace: kube-system
 
 resources:
-  - github.com/cloudpunks/helm-controller?ref=v1.2.7
+  - github.com/cloudpunks/helm-controller?ref=v1.3.0
 
 ...
 ```
