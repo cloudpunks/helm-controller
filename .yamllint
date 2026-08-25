@@ -3,7 +3,7 @@
 extends: default
 
 ignore: |
-  .github/wokflows/
+  .github/
   dist/
 
 rules:
