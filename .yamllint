@@ -3,9 +3,8 @@
 extends: default
 
 ignore: |
-  .github/workflows
-  .pre-commit-config.yaml
-  dist/*
+  .github/wokflows/
+  dist/
 
 rules:
   line-length: disable

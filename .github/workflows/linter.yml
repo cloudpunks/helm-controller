@@ -17,10 +17,10 @@ jobs:
 
     steps:
       - name: Checkout source
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        uses: actions/checkout@v7
 
       - name: Lint manifest
-        uses: actionhippie/yamllint@42cde5141b45bc5832d61ed19007b5ca0f354753 # v1
+        uses: actionhippie/yamllint@v1
         with:
           strict: true
 

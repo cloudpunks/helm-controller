@@ -17,10 +17,10 @@ jobs:
 
     steps:
       - name: Checkout source
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        uses: actions/checkout@v7
 
       - name: Build manifest
-        uses: actionhippie/kustomize@5c7aa4c7f31b47f4272d46a6d59e08420b1371b4 # v3
+        uses: actionhippie/kustomize@v3
         with:
           print: true
 
