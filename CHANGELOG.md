@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.4.0](https://github.com/cloudpunks/helm-controller/compare/v1.3.1...v1.4.0) (2026-10-19)
+
+### Dependencies
+
+* **minor:** update dependency pre-commit to v4.7.0 ([#75](https://github.com/cloudpunks/helm-controller/issues/75)) ([50d7077](https://github.com/cloudpunks/helm-controller/commit/50d707727e9b01fbb71a0bf0483fb593bc8b141c))
+
 ## [1.3.1](https://github.com/cloudpunks/helm-controller/compare/v1.3.0...v1.3.1) (2026-09-28)
 
 ### Dependencies
