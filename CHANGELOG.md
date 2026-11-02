@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.0.0](https://github.com/cloudpunks/helm-controller/compare/v1.4.0...v2.0.0) (2026-11-02)
+
+### Dependencies
+
+* **major:** update node.js to v26 ([#76](https://github.com/cloudpunks/helm-controller/issues/76)) ([53a2519](https://github.com/cloudpunks/helm-controller/commit/53a25191638e420b0110c3336646b084dd98bead))
+
 ## [1.4.0](https://github.com/cloudpunks/helm-controller/compare/v1.3.1...v1.4.0) (2026-10-19)
 
 ### Dependencies
